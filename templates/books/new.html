@@ -2,4 +2,40 @@
 
 {% block content %}
 
+<form action="/books" methods="post">
+    <div>
+        <input class="input"
+               type="text"
+               name="title"
+               id="title"
+               placeholder="Book Title"
+               required
+               autofocus>
+    </div>
+    <div>
+        <input type="text" id="genre" name="genre" placeholder="Genre" required autofocus>
+    </div>
+
+    <div>
+        <input class="input"
+               type="text"
+               name="publisher"
+               id="publisher"
+               placeholder="Publisher"
+               required>
+    </div>
+
+    <div>
+        <select class="select" name="author" id="author_id">
+            <option value="">Choose Author</option>
+            {% for author in authors %}
+                <option value="{{ author_id }}">{{ author.full_name() }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit">Add Book</button>
+</form>
+
+
+
 {% endblock %}

@@ -1,11 +1,13 @@
 body{
   font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+  background-color:  lightsteelblue;
 }
 
 .menu {
   display: flex;
-  padding: 10px;
-  background-color:orange;
+  padding: 20px;
+  background-color: darkslategrey;
+  border-radius: 10px;
   color: white;
 }
 
@@ -16,8 +18,9 @@ body{
 
 .menu li a:hover{
   background-color: white;
-  padding: 3px;
-  color: orange;
+  border-radius: 5px;
+  padding: 5px;
+  color: darkslategrey;
 }
 
 .menu li{
@@ -26,4 +29,61 @@ body{
   color: white;
   font-family: "Helvetica", arial, sans-serif; font-size: 14px;
 }
+
+input, select {
+  border-radius: 15px;
+  font-size: 100%;
+  width : 50%;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.book {
+  border: 2px solid darkslategray;
+  width: 300px;
+  min-height: 68px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.book a{
+  color: darkslategray;
+  text-decoration: none;
+}
+
+.book a:hover{
+  text-transform: uppercase;
+  background-color: darkslategray;
+  color:white;
+  padding: 5px;
+  border-radius: 3px;
+
+}
+
+button {
+  background-color: darkslategray;
+  color: white;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding:5px;
+}
+
+.edit {
+  color: darkslategray;
+  text-decoration: none;
+}
+
+.edit:hover {
+  background-color: darkslategray;
+  color:white;
+  padding: 5px;
+  border-radius:3px;
+  
+}
+
+
+
 

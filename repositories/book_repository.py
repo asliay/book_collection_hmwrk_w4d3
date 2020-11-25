@@ -6,8 +6,8 @@ import repositories.author_repository as author_repository
 
 
 def save(book):
-    sql = "INSERT INTO books (title, genre, publisher, author_id, isbn) VALUES (%s, %s, %s, %s, %s) RETURNING *"
-    values = [book.title, book.genre, book.publisher, book.author.id, book.isbn]
+    sql = "INSERT INTO books (title, genre, publisher, author_id) VALUES (%s, %s, %s, %s) RETURNING *"
+    values = [book.title, book.genre, book.publisher, book.author.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     book.id = id
@@ -22,7 +22,7 @@ def select_all():
 
     for row in results:
         author = author_repository.select(row['author_id'])
-        book = Book(row['title'], row['genre'], row['publisher'], author, row['isbn'], row['id'] )
+        book = Book(row['title'], row['genre'], row['publisher'], author, row['id'] )
         books.append(book)
     return books
 
@@ -36,7 +36,7 @@ def select(id):
 
     if result is not None:
         author = author_repository.select(result['author_id'])
-        book = Book(result['title'], result['genre'], result['publisher'], author, result['isbn'], result['id'] )
+        book = Book(result['title'], result['genre'], result['publisher'], author, result['id'] )
     return book
 
 
@@ -53,6 +53,6 @@ def delete(id):
 
 def update(book):
     sql = "UPDATE books SET (title, genre, publisher, author_id) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [book.title, book.genre, book.publisher, book.author.id, book.isbn, book.id]
+    values = [book.title, book.genre, book.publisher, book.author.id, book.id]
     print(values)
     run_sql(sql, values)
