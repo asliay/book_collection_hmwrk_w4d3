@@ -1,0 +1,28 @@
+body{
+  font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+}
+
+.menu {
+  display: flex;
+  padding: 10px;
+  background-color:orange;
+  color: white;
+}
+
+.menu li a{
+  text-decoration: none;
+  color:white;
+}
+
+.menu li a:hover{
+  background-color: white;
+  padding: 3px;
+  color: orange;
+}
+
+.menu li{
+  padding-right: 10px;
+  list-style: none;
+  color: white;
+  font-family: "Helvetica", arial, sans-serif; font-size: 14px;
+}
