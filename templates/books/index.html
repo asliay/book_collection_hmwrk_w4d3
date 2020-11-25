@@ -2,13 +2,17 @@
 
 {% block content %}
 {% for book in all_books %}
-    <div>
+    <div class="book">
         <p class="title">{{ book.title }}</p>
         <p class="author_name"> {{book.author.full_name() }}</p>
         <p class="isbn">ISBN: {{ book.isbn }}</p>
-        <p class="genre">{{ book.genre }}</p>
-        <p class="publisher">{{ book.publisher }}</p>
+        <p class="genre">Genre: {{ book.genre }}</p>
+        <p class="publisher">Publisher: {{ book.publisher }}</p>
+        <!-- <img src="{{ url_for('static', filename='images/ship_of_magic.jpg') }}" alt="book cover"> -->
     </div>
+    <form action="/books/{{ book.id }}/delete" method="POST">
+        <button type="submit">Delete</button>
+    </form>
 {% endfor %}
 {% endblock %}
 
